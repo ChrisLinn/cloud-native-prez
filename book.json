@@ -1,6 +1,6 @@
 {
     "title": "Cloud Native",
-    "author": "HAOYUatHZ",
+    "author": "ChrisLinn",
     "output.name": "site",
     "gitbook": "3.2.3",
     "root": "./",
@@ -52,10 +52,10 @@
             ]
         },
         "github": {
-            "url": "https://github.com/HAOYUatHZ/cloud-native-prez"
+            "url": "https://github.com/ChrisLinn/cloud-native-prez"
         },
         "github-buttons": {
-            "repo": "HAOYUatHZ/cloud-native-prez",
+            "repo": "ChrisLinn/cloud-native-prez",
             "types": [
                 "star",
                 "watch",
@@ -93,7 +93,7 @@
            ]
        },
         "tbfed-pagefooter": {
-            "copyright": "Copyright © HAOYUatHZ 2017-2019",
+            "copyright": "Copyright © ChrisLinn 2017-2019",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         },
