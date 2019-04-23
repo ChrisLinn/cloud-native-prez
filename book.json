@@ -44,7 +44,7 @@
 
     "pluginsConfig": {
         "theme-default": {
-            "showLevel": false
+            "showLevel": true
         },
         "prism": {
             "css": [
@@ -102,7 +102,7 @@
             "skipFirstH1": true
         },
         "anchor-navigation-ex": {
-            "showLevel": true,
+            "showLevel": false,
             "multipleH1": false,
             "mode": "float",
             "showGoTop":true,
