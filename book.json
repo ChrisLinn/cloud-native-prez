@@ -44,7 +44,7 @@
 
     "pluginsConfig": {
         "theme-default": {
-            "showLevel": true
+            "showLevel": false
         },
         "prism": {
             "css": [
