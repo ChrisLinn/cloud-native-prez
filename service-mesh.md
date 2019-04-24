@@ -19,9 +19,9 @@
              -->
 
         <li>Lantency observed load-balancing</li>
+        <li>Advanced orchestration</li>
     </td>
     <td style="font-size:150%;">
-        <li>Advanced orchestration</li>
         
         <!-- 
             <ul>
