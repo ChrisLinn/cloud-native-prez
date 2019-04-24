@@ -3,9 +3,17 @@
 <br>
 
 <h1 style="font-size:250%;">Monolithic vs Microservices</h1>
-<br>
 
-<img src="/img/physical.png" alt="physical" width="150%" align="middle";>
+# Monolithic
+
+<img src="/img/mono-bycoin.png" alt="mono-bycoin" width="75%" align="middle";>
+
+---
+
+
+# Microservices
+
+<img src="/img/microservices-bycoin.png" alt="microservices-bycoin" width="75%" align="middle";>
 <br>
 <br>
 <br>
