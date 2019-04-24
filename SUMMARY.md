@@ -4,7 +4,7 @@
 <!-- ex_nolevel -->
 
 * [Cloud Native－以 bycoin 为例](README.md)
-* [如何有机会成为下一个 Uber、Netflix、Airbnb?](next-giant.md)
+* [什么样的架构是我们需要的](next-giant.md)
 * [回顾历史](history.md)
 * [Physical](physical.md)
 * [Virtualization](vz.md)

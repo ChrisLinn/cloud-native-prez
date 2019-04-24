@@ -25,25 +25,6 @@
 <br>
 <br>
 
-<h1 style="font-size:250%;">组件之间交互的接口</h1>
-<p style="font-size:150%;">将 Kubernetes 与具体产品解耦</p>
-<ul style="font-size:150%;">
-<li>Container Runtime Interface, CRI</li>
-<li>Container Network Interface, CNI</li>
-<li>Container Storage Interface, CSI</li>
-<li>Open Container Initiative, OCI</li>
-</ul>
-
-<br>
-<br>
-<br>
-
-<hr>
-</hr>
-
-<br>
-<br>
-
 <h1 style="font-size:250%;">核心组件</h1>
 <ul style="font-size:150%;">
 <li>etcd 保存集群所有的网络配置和对象的状态信息</li>
@@ -86,8 +67,6 @@
 <br>
 
 <h1 style="font-size:250%;">Sidecar</h1>
-
-![sidecar](/img/sidecar.jpg)
 
 ![ContainerSidecarPattern](/img/ContainerSidecarPattern.png)
 

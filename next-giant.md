@@ -3,29 +3,16 @@
 <br>
 <br>
 
-<h1 style="font-size:250%;">如何有机会成为下一个 Uber、Netflix、Airbnb?</h1>
+<h1 style="font-size:250%;">什么样的架构是我们需要的</h1>
+
+<ul style="font-size:150%;">
+<li>高可用</li>
+<li>高弹性易扩展</li>
+<li>故障隔离保护</li>
+<li>故障快速定位</li>
+<li>问题快速解决</li>
+<li>快速迭代</li>
+<li>不中断业务持续更新</li>
+</ul>
 
 <br>
-<blockquote>
-<p style="font-size:150%;">how valuable your technology was. ... the number of users you have.</p>
-<p style="font-size:150%;">Users are the only real proof that you&apos;ve created wealth.</p>
-<p style="font-size:150%;">... solve problems that users care about.</p>
-</blockquote>
-
-<br>
-<p style="font-size:150%" align="right";>-- Hackers & Painters</p>
-
-<br>
-
-<!-- 
-升级缓慢、架构臃肿、不能快速迭代、故障不能快速定位、问题无法快速解决
- -->
-
-<!-- 
-敏捷
-可靠
-高弹性
-易扩展
-故障隔离保护
-不中断业务持续更新
- -->
