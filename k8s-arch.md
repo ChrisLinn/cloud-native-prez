@@ -90,3 +90,17 @@
 ![sidecar](/img/sidecar.jpg)
 
 ![ContainerSidecarPattern](/img/ContainerSidecarPattern.png)
+
+<br>
+<br>
+
+<hr>
+</hr>
+
+
+<br>
+<br>
+
+<h1 style="font-size:250%;">Services</h1>
+
+<img src="/img/services.svg" alt="services" width="150%" align="middle";>
