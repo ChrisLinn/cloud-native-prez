@@ -15,6 +15,7 @@
 * [Kubernetes 与 Docker 的关系](k8s-vs-docker.md)
 * [Kubernetes 架构](k8s-arch.md)
 * [K8s 版 Bycoin 架构](k8s-bycoin.md)
+* [K8s 好处](k8s-benefits.md)
 * [K8s 存在的问题](k8s-problems.md)
 * [Service Mesh](service-mesh.md)
 * [Istio 架构](istio-arch.md)

@@ -68,6 +68,8 @@
 
 <h1 style="font-size:250%;">Sidecar</h1>
 
+![sidecar](/img/sidecar.jpg)
+
 ![ContainerSidecarPattern](/img/ContainerSidecarPattern.png)
 
 <br>
