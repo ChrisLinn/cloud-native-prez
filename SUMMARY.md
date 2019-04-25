@@ -4,7 +4,7 @@
 <!-- ex_nolevel -->
 
 * [Cloud Native－以 bycoin 为例](README.md)
-* [什么样的架构是我们需要的](next-giant.md)
+* [目标](next-giant.md)
 * [Physical](physical.md)
 * [Virtualization](vz.md)
 * [虚拟化使云计算成为可能](cloud.md)

@@ -3,7 +3,7 @@
 <br>
 <br>
 
-<h1 style="font-size:250%;">什么样的架构是我们需要的</h1>
+<h1 style="font-size:250%;">目标</h1>
 
 <ul style="font-size:150%;">
 <li>高可用</li>
