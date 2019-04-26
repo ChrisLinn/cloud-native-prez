@@ -1,3 +1,7 @@
++ https://jimmysong.io/posts/what-is-cloud-native-application-architecture/
++ https://zhuanlan.zhihu.com/p/28663432
+
+
 + 单体架构
     * a 出问题，b 跟着遭殃
         - 硬件隔离
@@ -18,16 +22,19 @@
 
 ---
 + 微服务
-    * 微服务中最基础的服务注册发现
-        - traditional
-            + client-side
-                * code/framework in app
-                    - Eureka
-        - k8s
-            + 不需要修改应用代码，直接从网络层面来实现
-                * dns
-                * service
-                * ingress
+    * 开发和部署上的灵活性和技术多样性
+    * 带来了服务调用的开销、分布式系统管理、调试与服务治理方面的难题 服务之间的依赖和通讯十分复杂。
+        - 一致性、延迟和网络分区、服务监控的变革、服务暴露、权限的管控等。
+            + 微服务中最基础的服务注册发现
+                * traditional
+                    - client-side
+                        + code/framework in app
+                            * Eureka
+                * k8s
+                    - 不需要修改应用代码，直接从网络层面来实现
+                        + dns
+                        + service
+                        + ingress
     * 单机、主备、集群、异地容灾
     * 扩容
     * load-balancing
@@ -47,6 +54,9 @@
         - 日志收集
             + 面对大规模服务和节点时，进入服务器查看日志文件是不现实的
         - k8s
+    * 容错
+        - 熔断器: 阻绝该服务与其依赖的远程调用
+        - 隔板: 将服务分区，以便限制错误影响的区域
     * 架构转换 : 单体架构  -> 微服务
         - traffic management
         - 线上业务不能停
@@ -131,15 +141,29 @@
 
 ---
 + k8s
-    * 应用的生命周期管理
-        - 部署和管理
-            + 扩缩容
-            + 自动恢复
-            + 发布
     * 为微服务提供了可扩展、高弹性的部署和管理平台
+        + Service Discovery
+        * DevOps: 开发测试环境一致、CI/CD，监控
+        - 应用的生命周期
+            + 部署和管理
+                * 扩缩容
+                    + `kubectl scale deployment nginx-deployment --replicas 10`
+                    + `kubectl autoscale deployment nginx-deployment --min=10 --max=15 --cpu-percent=80`
+                * 自动恢复
+                * 发布
+                    + 滚动升级和回滚应用
+                        * `kubectl set image deployment/nginx-deployment nginx=nginx:1.9.1`
 
 ---
 + 接口，解耦产品
++ 核心组件
+    * etcd 保存集群所有的网络配置和对象的状态信息
+    * apiserver 提供了资源操作唯一入口，并提供认证、授权、访问控制、API注册和发现等机制
+    * controller manager 维护集群的状态，比如故障检测、自动扩展、滚动更新等
+    * scheduler负责资源的调度，按照预定的调度策略将Pod调度到相应的机器上
+    * kubelet 维护容器的生命周期，同时也负责Volume（CVI）和网络（CNI）的管理
+    * Container runtime 负责镜像管理以及Pod和容器的真正运行（CRI）
+    * kube-proxy 为Service提供cluster内部的服务发现和负载均衡
 + pod
     * 部署应用服务的最小单元
     * 提供容器运行时环境并保持容器的运行状态
@@ -208,6 +232,8 @@
 
 ---
 + service mesh & 微服务治理
+    + 专用的基础设施层, 完全解耦于应用，应用可以无感知
+    + 负责服务之间的网络调用、限流、熔断和监控。
     * Service Mesh 的基础是透明代理，通过 sidecar proxy 拦截到微服务间流量后再通过控制平面配置管理微服务的行为。
         - 应用程序间通讯的中间层
         - 轻量级网络代理
@@ -217,6 +243,7 @@
             + 通过为更接近微服务应用层的抽象，管理服务间的流量、安全性和可观察性。
         - vs kub-proxy
             + 对每个服务做细粒度的控制
+            + 扩展kubernetes的应用负载均衡机制，实现灰度发布
     * observability
         - 服务调用
         - 性能分析
@@ -228,3 +255,35 @@
         - 安全保护
     * 标准化的日志
         - 服务化以后，每个服务可以用不同的开发语言
+
+---
+![cloud-native-architecutre-mindnode](https://chrislinn.ink/img/cloud-native/cloud-native-architecutre-mindnode.jpg)
+
+
+
+---
++ serverless, FaaS（Functions as a Service)
+    + 传统的服务器端软件一般需要长时间驻留在操作系统的虚拟机或者容器中运行
+    + FaaS是直接将程序部署上到平台上, 服务端逻辑运行在无状态的计算容器中，当有事件到来时触发执行，执行完了就可以卸载掉。
+        * 事件驱动
+        * 消息触发
+        * 按需计算
+        * 完全被第三方管理
+        * 业务层面的状态则被开发者使用的数据库和存储资源所记录
+    + Pros
+        - 降低成本
+        - 快速上线
+            + 内建自动化部署, 只需要关注于如何更好去实现业务
+        - 系统安全性
+            + 无服务器，无登陆入口
+        - 适应微服务架构
+        - 自动扩展能力
+    + Cons
+        - 不适合长时间运行应用
+            + 应用不运行的时候进入 “休眠状态”
+                * 冷启动时间
+            + 长期租车的成本肯定比买车贵
+        - 依赖第三方服务
+            + 不利于迁移
+        - 缺乏调试和开发工具
+            + 每次调试时需要一遍又一遍地上传代码
