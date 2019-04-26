@@ -100,10 +100,12 @@
 + 虚拟机
     * 隔离
     * 依赖库
-    * 吃资源启动慢, 宕机时间, 云产商成本
-        - 容器, 进程角度
-            + docker
-                * namespaces
+    * 模拟 hardware & OS: 吃资源, 启动慢, 宕机时间, 体积大, 云产商成本
+        - 容器, 进程层面, 接触到的各种资源都是虚拟的隔离的
+            + 轻量级, 易于配置, 易于使用
+            + 构建、发布、运行更加敏捷和可控
+            + docker 目前最流行的容器解决方案。
+                * namespaces 做权限的控制和隔离
                     - ipc, posix
                     - pid
                     - network
@@ -113,12 +115,14 @@
                         + routing
                         + host, domain
                         + user group
-                * cgroups
+                * cgroups 进行资源的配置
                     - mem
                     - cpu
                     - devices
                     - hang process
                     - bandwidth, flow_priv
+                * 提供弹性的云服务。因为 Docker 容器可以随开随关，很适合动态扩容和缩容
+                * 组建微服务架构
             + 应用才是价值所在
                 * compose
                 * swarm
