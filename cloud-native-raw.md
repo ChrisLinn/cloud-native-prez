@@ -1,7 +1,5 @@
 # Cloud Native
 
-
-
 + https://jimmysong.io/posts/what-is-cloud-native-application-architecture/
 + https://zhuanlan.zhihu.com/p/28663432
 
@@ -21,46 +19,11 @@
 
 ---
 
-# Cloud Native 的定义
-+ 在动态环境中构建和运行可弹性扩展的应用
-+ 代表技术包括容器、服务网格、微服务、不可变基础设施和声明式 API
-+ 能够构建容错性好、易于管理和便于观察的松耦合系统
-+ 结合可靠的自动化手段，可以使开发者轻松地对系统进行频繁并可预测的重大变更
-
-
----
-# bycoin 目前的架构
-+ 镜像
-+ 使用阿里云提供的 RDS、负载均衡
-
-# 存在的问题
-+ 不利于升级管理
-+ 依赖性
-+ 不利于迁移
-    * 之前的 青云 -> 阿里
-        - 流量
-
-
----
-# 虚拟机
-https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-virtual-machine
-
-虚拟机中需要模拟一台物理机的所有资源，比如你要模拟出有多少CPU、网卡、显卡等等，这些都是在软件层面通过计算资源实现的，这就给物理机凭空增加了不必要的计算量。
-
 # Kubernetes (k8s)
 
 + 让容器应用进入大规模工业生产
 + 在单机上运行容器，无法发挥它的最大效能，只有形成集群，才能最大程度发挥容器的良好隔离、资源分配与编排管理的优势
 
----
-# k8s
-+ 容器编排调度引擎/系统
-+ 一个规范
-    * 描述集群的架构
-    * 定义服务的最终状态
-        - 将系统自动地达到和维持在这个状态
-+ 云原生应用的基石
-    * 相当于一个云操作系统
 
 ---
 
@@ -120,16 +83,6 @@ https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-virt
 ---
 ![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
 
----
-# 微服务中最基础的服务注册发现
-+ 客户端服务发现
-    * Java应用中常用的方式是使用Eureka和Ribbon做服务注册发现和负载均衡
-+ 服务端服务发现
-    * Kubernetes中可以使用DNS、Service和Ingress来实现
-        - 不需要修改应用代码，直接从网络层面来实现
-
----
-![service-discovery-in-microservices](https://chrislinn.ink/img/cloud-native/service-discovery-in-microservices.png)
 
 ---
 云端架构(分布式系统)，相对单体架构来说会带来很多挑战。一致性、延迟和网络分区、服务监控的变革、服务暴露、权限的管控等。
@@ -152,13 +105,6 @@ https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-virt
 
 可以将它比作是应用程序或者说微服务间的 TCP/IP，负责服务之间的网络调用、限流、熔断和监控。
 
----
-
-# Service Mesh 可以用来做什么
-+ Traffic Management：API网关
-+ Observability：服务调用和性能分析
-+ Policy Enforcement：控制服务访问策略
-+ Service Identity and Security：安全保护
 
 ---
 # Service Mesh 的特点

@@ -18,13 +18,13 @@
 
 ---
 + 微服务
-    * _服务发现_
+    * 微服务中最基础的服务注册发现
         - traditional
             + client-side
                 * code/framework in app
                     - Eureka
         - k8s
-            + network layer
+            + 不需要修改应用代码，直接从网络层面来实现
                 * dns
                 * service
                 * ingress
@@ -100,7 +100,8 @@
 + 虚拟机
     * 隔离
     * 依赖库
-    * 模拟 hardware & OS: 吃资源, 启动慢, 宕机时间, 体积大, 云产商成本
+    * 在软件层面通过计算资源模拟 hardware(CPU、网卡、显卡) & OS: 吃资源, 启动慢, 宕机时间, 体积大, 云产商成本
+        - https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-virtual-machine
         - 容器, 进程层面, 接触到的各种资源都是虚拟的隔离的
             + 轻量级, 易于配置, 易于使用
             + 构建、发布、运行更加敏捷和可控
@@ -223,7 +224,7 @@
     * policy enforcement
         - 控制服务访问策略
             + 多级调用
-        - service identity & security
-            + 安全保护
+    * service identity & security
+        - 安全保护
     * 标准化的日志
         - 服务化以后，每个服务可以用不同的开发语言
