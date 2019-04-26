@@ -1,4 +1,10 @@
 <!-- ex_nonav -->
+
+<h1 style="font-size:250%;">Physical</h1>
+<br>
+
+<img src="/img/physical.png" alt="physical" width="150%" align="middle";>
+
 <h1 style="font-size:250%;">Virtualization</h1>
 <img src="/img/vm.jpg" alt="vm" width="100%">
 <br>
