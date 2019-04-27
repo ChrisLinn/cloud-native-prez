@@ -30,6 +30,7 @@
 * 容器
     * 进程层面, 接触到的各种资源都是虚拟的隔离的
         - 轻量级, 易于配置, 易于使用
+        - So, let's say you have a 1 GB container image; if you wanted to use a full VM, you would need to have 1 GB times x number of VMs you want. With Docker and AuFS you can share the bulk of the 1 GB between all the containers and if you have 1000 containers you still might only have a little over 1 GB of space for the containers OS (assuming they are all running the same OS image).
         - 构建、发布、运行更加敏捷和可控
 * 想放上云
     - 弹性计算
@@ -133,69 +134,23 @@
 + 传统成本
     + 非线性
     + 扩容维护成本
-
-
-
----
-
-        - 熔断降级速率限制
-            + 遥测
-
----
-+ 微服务
-
-    * 扩容
-    - 流量监控
-        - 限流, 降级
-            + 在2014年春节的时候，微信红包，每分钟8亿多次的请求，其实真正到它后台的请求量，只有十万左右的数量级
-            * 遥测
-        - 熔断
-            * 遥测
-    - 错误异常监控
-        + 重试
-        - 故障恢复
-            * 遥测
-            + 平均故障时间 vs 故障处理时间
-        - 日志收集
-        - k8s
++ k8s problem
+    * ![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
+    * auth
+        - b 站 app被逆向，app key 泄漏，内网api
+    * 在2014年春节的时候，微信红包，每分钟8亿多次的请求，其实真正到它后台的请求量，只有十万左右的数量级
+        - 降级
+        - 遥测, 流量监控
+            + 多少请求
+            + 多久回复, 超时时间
+            + 多少错误
+    * 速率限制
+        - 消息中间件
+            + 可以把两个模块之间的交互异步化，其次可以把不均匀请求流量输出为匀速的输出流量，所以说消息中间件 异步化 解耦 和流量削峰的利器。
     * 容错
         - 熔断器: 阻绝该服务与其依赖的远程调用
-        - 隔板: 将服务分区，以便限制错误影响的区域
-
-
-+ 消息中间件
-    * 可以把两个模块之间的交互异步化，其次可以把不均匀请求流量输出为匀速的输出流量，所以说消息中间件 异步化 解耦 和流量削峰的利器。
-
----
-  
-
-
-
-+ b 站 app被逆向，app key 泄漏，内网api
-    + auth
-
----
-
-+ 开发测试质量保证运维 vs DevOps
-    * 快速迭代 交付
-        - 质量 安全 发布周期
-    * Infrastructure as Code
-        - 可 git 管控
-            + 基础设施&部署环境
-        - Cloud Native 基础设施在提供自主应用管理的 IaaS 上创建了一个平台, 该平台在动态创建的基础设施之上以抽象出单个服务器并促进动态资源分配调度
-
-
----
-![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
-+ 遥测
-    * 多少请求
-    * 多久回复, 超时时间
-    * 多少错误
-+ 分布式追踪
-    * 将单体应用拆成多个微服务之后，监控服务之间的依赖关系和调用链，以判断应用在哪个服务环节出了问题，哪些地方可以优化
-
-
----
+    * 分布式追踪
+        - 将单体应用拆成多个微服务之后，监控服务之间的依赖关系和调用链，以判断应用在哪个服务环节出了问题，哪些地方可以优化
 + service mesh & 微服务治理
     * 从应用层下沉到基础设施层, 更注重业务逻辑和应用的性能本身, 将服务治理的能力交给平台来解决
     + 轻量级高性能网络代理, 专用的基础设施层, 完全解耦于应用，应用可以无感知
@@ -223,63 +178,51 @@
     * service identity & security
         - 安全保护
     * 标准化的日志
-        - 服务化以后，每个服务可以用不同的开发语言
-
-
-+ Service discovery
-+ Advanced routing
-    + Auto retries
-    + Retry budgets
-    + Request deadlines
-    + Circuit breaking
-+ Lantency observed load-balancing
-+ Advanced orchestration
-    + Canary, blue/green
-    + Per request routing
-+ Standardised metrics/logging
-+ Distributed tracing
-+ Rate limiting
-+ Authentication
-
-
----
-
-Istio架构分为控制层和数据层:
-
-+ 数据层：由一组智能代理（Envoy）作为sidecar部署，协调和控制所有microservices之间的网络通信。
-+ 控制层：负责管理和配置代理路由流量，以及在运行时执行的政策。
-
-+ mixer
-    * 执行访问控制和使用策略
-        - 如何允许被通信
-    * 收集Envoy代理和其他服务的遥测数据
-+ citadel
-    * 服务间和最终用户认证
-    * 升级未加密流量, 颁发证书
-    * 为运营商提供基于服务身份而不是网络控制的策略的能力
-+ galley
-    * 收集和验证配置，并将其传播到各种Istio组件
-    * 隔离 istio 组件 和用户配置细节
-+ pilot
-    * routing rule & traffic managment rule
-        - high-level -> envoy specific config
-        - 传播到 components
-+ envoy
-    * 动态服务发现
-    * 负载平衡
-    * TLS终止
-    * HTTP/2＆gRPC代理
-    * 断路器
-    * 运行状况检查
-
-
-
----
-![cloud-native-architecutre-mindnode](https://chrislinn.ink/img/cloud-native/cloud-native-architecutre-mindnode.jpg)
-
-
-
----
+        - 服务化以后，每个服务可以用不同的开发语言+ istio
++ some
+    * Service discovery
+    * Advanced routing
+        * Auto retries
+        * Retry budgets
+        * Request deadlines
+        * Circuit breaking
+    * Lantency observed load-balancing
+    * Advanced orchestration
+        * Canary, blue/green
+        * Per request routing
+    * Standardised metrics/logging
+    * Distributed tracing
+    * Rate limiting
+    * Authentication
++ istio
+    * Istio架构分为控制层和数据层:
+        - 数据层：由一组智能代理（Envoy）作为sidecar部署，协调和控制所有microservices之间的网络通信。
+        - 控制层：负责管理和配置代理路由流量，以及在运行时执行的政策。
+    * components
+        - mixer
+            + 执行访问控制和使用策略
+                * 如何允许被通信
+            + 收集Envoy代理和其他服务的遥测数据
+        - citadel
+            + 服务间和最终用户认证
+            + 升级未加密流量, 颁发证书
+            + 为运营商提供基于服务身份而不是网络控制的策略的能力
+        - galley
+            + 收集和验证配置，并将其传播到各种Istio组件
+            + 隔离 istio 组件 和用户配置细节
+        - pilot
+            + routing rule & traffic managment rule
+                * high-level -> envoy specific config
+                * 传播到 components
+        - envoy
+            + 动态服务发现
+            + 负载平衡
+            + TLS终止
+            + HTTP/2＆gRPC代理
+            + 断路器
+            + 运行状况检查
++ 开发, 测试, 质量保证, 运维 vs DevOps  
+    * 质量 安全 快速迭代 交付
 + serverless, FaaS (Functions as a Service)
     + 传统的服务器端软件一般需要长时间驻留在操作系统的虚拟机或者容器中运行
     + FaaS是直接将程序部署上到平台上, 服务端逻辑运行在无状态的计算容器中，当有事件到来时触发执行，执行完了就可以卸载掉。
@@ -306,15 +249,6 @@ Istio架构分为控制层和数据层:
         - 缺乏调试和开发工具
             + 每次调试时需要一遍又一遍地上传代码
 
-
-<!-- 
-7. docker对比传统虚拟机的图？为什么微服务架构比较适合docker？比虚拟机好再哪里？
-10. 想知道是什么原因造成了云生升级的优势，从技术层，而不是直接带来的好处
-9. 想知道k8s, docker这些的大体技术架构，单纯好处，坏处，感觉有点浅 想知道service mesh和k8s是怎么结合的，替换了k8s上的哪些模块？
-
-13. service mesh解决了什么问题，文字化核心点一下？
-20. 将cloude native的好处的时候，画个图？类似于k8s和iota是怎么样的？服务是怎么一个装备 -
- -->
 
 * 负载均衡
     - 流量入口, 高性能、高可靠
