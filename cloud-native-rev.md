@@ -282,10 +282,6 @@ Istio架构分为控制层和数据层:
 + 数据层：由一组智能代理（Envoy）作为sidecar部署，协调和控制所有microservices之间的网络通信。
 + 控制层：负责管理和配置代理路由流量，以及在运行时执行的政策。
 
-https://jimmysong.io/posts/istio-overview/
-https://jimmysong.io/posts/why-do-we-need-istio/
-
----
 
 
 ---
