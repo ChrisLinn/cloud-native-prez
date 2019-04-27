@@ -290,7 +290,7 @@ Istio架构分为控制层和数据层:
 
 
 ---
-+ serverless, FaaS（Functions as a Service)
++ serverless, FaaS (Functions as a Service)
     + 传统的服务器端软件一般需要长时间驻留在操作系统的虚拟机或者容器中运行
     + FaaS是直接将程序部署上到平台上, 服务端逻辑运行在无状态的计算容器中，当有事件到来时触发执行，执行完了就可以卸载掉。
         * 事件驱动
