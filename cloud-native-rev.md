@@ -280,6 +280,23 @@
     * 标准化的日志
         - 服务化以后，每个服务可以用不同的开发语言
 
+
++ Service discovery
++ Advanced routing
+    + Auto retries
+    + Retry budgets
+    + Request deadlines
+    + Circuit breaking
++ Lantency observed load-balancing
++ Advanced orchestration
+    + Canary, blue/green
+    + Per request routing
++ Standardised metrics/logging
++ Distributed tracing
++ Rate limiting
++ Authentication
+
+
 ---
 
 Istio架构分为控制层和数据层:
