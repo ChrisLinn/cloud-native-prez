@@ -4,12 +4,14 @@
 <ul style="font-size:150%;">
 <li>开发成本</li>
     <ul>
-    <li>服务发现</li>
+    <li>剥离服务发现、负载均衡等问题，让服务开发人员只用关注业务逻辑</li>
     </ul>
 <li>运维成本</li>
     <ul>
+    <li>故障恢复</li>
+    <li>扩展方便</li>
     <li>动态扩容</li>
-    <li>响应</li>
+    <li>CI/CD</li>
     </ul>
 </ul>
 
