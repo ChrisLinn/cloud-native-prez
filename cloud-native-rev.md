@@ -224,10 +224,13 @@
 
 
 ---
+![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
 + 遥测
     * 多少请求
     * 多久回复, 超时时间
     * 多少错误
++ 分布式追踪
+    * 将单体应用拆成多个微服务之后，监控服务之间的依赖关系和调用链，以判断应用在哪个服务环节出了问题，哪些地方可以优化
 
 
 ---

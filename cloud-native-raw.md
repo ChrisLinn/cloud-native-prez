@@ -27,15 +27,7 @@ Kubernetes中的应用将作为微服务运行，但是Kuberentes本身并没有
 
 kube-proxy里基于iptables的原生负载均衡，并且服务间的流量也没有任何控制。
 
----
-# 分布式追踪
-将单体应用拆成多个微服务之后，监控服务之间的依赖关系和调用链，以判断应用在哪个服务环节出了问题，哪些地方可以优化
 
-OpenTracing 是 CNCF 提出的分布式追踪的标准
-
-
----
-![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
 
 
 ---
