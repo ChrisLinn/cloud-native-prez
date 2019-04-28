@@ -15,9 +15,6 @@
     </ul>
 </ul>
 
-
-<h2 style="font-size:250%;">成本</h2>
-
-## 成本曲线
+## 成本对比
 
 ![cost](/img/cost.png)
