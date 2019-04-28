@@ -15,6 +15,7 @@
 <li>基于 LXC -> runc</li>
 <li>利用 namespaces 来做权限的控制和隔离</li>
 <li>利用 cgroups 来进行资源的配置</li>
+<li>通过 aufs 来进一步提高文件系统的资源利用率</li>
 </ul>
 
 <br>

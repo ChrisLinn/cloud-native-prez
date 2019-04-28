@@ -42,3 +42,8 @@
 <li>易于配置</li>
 <li>易于使用</li>
 </ul>
+
+
+<p style="font-size:150%;">左侧是 LXC 虚拟的 Ubuntu ，默认安装使用 11 MB 大小。</p>
+
+![lxc](/img/lxc.png)

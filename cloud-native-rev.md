@@ -1,6 +1,5 @@
 + https://jimmysong.io/posts/what-is-cloud-native-application-architecture/
 + https://zhuanlan.zhihu.com/p/28663432
-+ https://stackoverflow.com/questions/16047306/how-is-docker-different-from-a-virtual-machine
 
 + 目标
     * 高并发
@@ -248,8 +247,9 @@
             + 不利于迁移
         - 缺乏调试和开发工具
             + 每次调试时需要一遍又一遍地上传代码
++ cloud native mindnode
 
-
+---
 * 负载均衡
     - 流量入口, 高性能、高可靠
         + dns
