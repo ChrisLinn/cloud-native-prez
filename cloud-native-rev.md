@@ -1,6 +1,5 @@
 + https://jimmysong.io/posts/what-is-cloud-native-application-architecture/
 + https://zhuanlan.zhihu.com/p/28663432
-
 + 目标
     * 高并发
     * 高可用
@@ -233,5 +232,3 @@
         - 缺乏调试和开发工具
             + 每次调试时需要一遍又一遍地上传代码
 + cloud native mindnode
-
----
