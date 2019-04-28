@@ -21,8 +21,3 @@
 ## 成本曲线
 
 ![cost](/img/cost.png)
-
-## 阿里云 RDS 为例
-![rds1](/img/rds1.png)
-
-![rds2](/img/rds2.png)

@@ -16,6 +16,23 @@
 <br>
 <br>
 
+<hr>
+</hr>
+
+
+<br>
+<br>
+
+<h1 style="font-size:250%;">Sidecar</h1>
+
+![ContainerSidecarPattern](/img/ContainerSidecarPattern.png)
+
+![sidecar](/img/sidecar.jpg)
+
+<br>
+<br>
+
+
 ---
 
 <br>
@@ -52,21 +69,5 @@
 </ul>
 
 <br>
-<br>
-<br>
-
-<hr>
-</hr>
-
-
-<br>
-<br>
-
-<h1 style="font-size:250%;">Sidecar</h1>
-
-![ContainerSidecarPattern](/img/ContainerSidecarPattern.png)
-
-![sidecar](/img/sidecar.jpg)
-
 <br>
 <br>
