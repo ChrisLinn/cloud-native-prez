@@ -2,7 +2,7 @@
 <h1 style="font-size:250%;">K8s 存在的问题</h1>
 <p style="font-size:250%;">微服务引入的问题</p>
 
-![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
+![microservice-concern](/img/cloud-native/microservice-concern.jpg)
 <br>
 
 ---
