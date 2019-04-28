@@ -136,7 +136,7 @@
     + 非线性
     + 扩容维护成本
 + k8s problem
-    * ![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
+    * microservice-concern
     - 负载均衡
         + 流量入口, 高性能、高可靠
             * dns
