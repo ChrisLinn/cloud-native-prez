@@ -12,7 +12,7 @@
 <li>如何解决? service mesh!</li>
 </ul>
 
-<p style="font-size:150%;">负载均衡</p>
+---
 <ul style="font-size:150%;">
 <li>DNS负载均衡</li>
     <ul>

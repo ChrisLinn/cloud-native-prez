@@ -5,7 +5,7 @@
 
 * [Cloud Native－以 bycoin 为例](README.md)
 * [目标](target.md)
-* [Monolithic](monolithic.md)
+* [Monolithic 版 Bycoin 架构](monolithic.md)
 * [Virtualization](vz.md)
 * [Microservices](mm1.md)
 * [Container](container.md)
@@ -18,6 +18,6 @@
 * [K8s 存在的问题](k8s-problems.md)
 * [Service Mesh](service-mesh.md)
 * [Istio 架构](istio-arch.md)
-* [K8s + Istio = Cloud Native!](cloud-native.md)
 * [Cloud Native 版 Bycoin 架构](cloud-native-bycoin.md)
 * [Serverless](serverless.md)
+* [Cloud Native](cloud-native.md)
