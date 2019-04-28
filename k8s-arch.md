@@ -64,20 +64,9 @@
 
 <h1 style="font-size:250%;">Sidecar</h1>
 
-![sidecar](/img/sidecar.jpg)
-
 ![ContainerSidecarPattern](/img/ContainerSidecarPattern.png)
 
-<br>
-<br>
-
-<hr>
-</hr>
-
+![sidecar](/img/sidecar.jpg)
 
 <br>
 <br>
-
-<h1 style="font-size:250%;">Services</h1>
-
-<img src="/img/services.svg" alt="services" width="150%" align="middle";>
