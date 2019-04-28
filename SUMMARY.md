@@ -6,7 +6,7 @@
 * [Cloud Native－以 bycoin 为例](README.md)
 * [目标](target.md)
 * [Monolithic 版 Bycoin 架构](monolithic.md)
-* [负载均衡](load-balancing.md)
+* [横向扩展](load-balancing.md)
 * [Microservices](mm1.md)
 * [Virtualization](vz.md)
 * [Container](container.md)
