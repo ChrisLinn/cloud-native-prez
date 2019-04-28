@@ -6,16 +6,16 @@
 <table border="0" style="float: middle; width: 125%;">
  <tr>
     <td style="font-size:150%;">
-        <li>Service discovery</li>
-        <li>Advanced routing</li>
-        <li>Lantency observed load-balancing</li>
-        <li>Advanced orchestration</li>
+        <li>服务发现</li>
+        <li>高级路由</li>
+        <li>基于延迟的负载均衡</li>
+        <li>高级编排</li>
     </td>
     <td style="font-size:150%;">
-        <li>Standardised metrics/logging</li>
-        <li>Distributed tracing</li>
-        <li>Rate limiting</li>
-        <li>Authentication</li>
+        <li>标准化遥测/日志</li>
+        <li>分布式追踪</li>
+        <li>速率限制</li>
+        <li>安全认证</li>
     </td>
  </tr>
 </table>
