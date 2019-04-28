@@ -29,7 +29,7 @@
 * 容器
     * 进程层面, 接触到的各种资源都是虚拟的隔离的
         - 轻量级, 易于配置, 易于使用
-        - So, let's say you have a 1 GB container image; if you wanted to use a full VM, you would need to have 1 GB times x number of VMs you want. With Docker and AuFS you can share the bulk of the 1 GB between all the containers and if you have 1000 containers you still might only have a little over 1 GB of space for the containers OS (assuming they are all running the same OS image).
+            + 11 mb
         - 构建、发布、运行更加敏捷和可控
 * 想放上云
     - 弹性计算
@@ -56,6 +56,8 @@
             + devices
             + hang process
             + bandwidth, flow_priv
+        - aufs
+            + 10GB*10 vs 11GB
     * 适合
         - 弹性云。可随开随关，动态扩容和缩容
         - 组建微服务架构
@@ -135,6 +137,15 @@
     + 扩容维护成本
 + k8s problem
     * ![microservice-concern](https://chrislinn.ink/img/cloud-native/microservice-concern.jpg)
+    - 负载均衡
+        + 流量入口, 高性能、高可靠
+            * dns
+                - 多级解析, 延迟
+                - 策略过于简单
+            + 软件负载均衡支持到 5 万级并发已经很困难了
+            * 硬件
+                - 成本
+                - 只能网络层，无法内存
     * auth
         - b 站 app被逆向，app key 泄漏，内网api
     * 在2014年春节的时候，微信红包，每分钟8亿多次的请求，其实真正到它后台的请求量，只有十万左右的数量级
@@ -250,31 +261,3 @@
 + cloud native mindnode
 
 ---
-* 负载均衡
-    - 流量入口, 高性能、高可靠
-        + dns
-            * 延迟
-                - DNS 解析是多级解析，新增/修改 DNS 后，解析时间较长；解析过程中，用户访问网站将失败；
-            * 策略 simple, inflexible
-            * 控制权限小
-                - 扩展性低：DNS 负载均衡的控制权在域名商那里，无法对其做更多的改善和扩展；
-            * 维护性差：也不能反映服务器的当前运行状态；支持的算法少；不能区分服务器的差异（不能根据系统与服务的状态来判断负载）
-        + 硬件
-            * 更适用于 __一大堆设备__ 、大访问量、 __简单应用__
-                - 如果几台服务器，用F5之类的硬件产品显得有些浪费
-            * 只能流量，无法内存
-                - 无法有效掌握服务器及应用状态
-                    + 根据系统与应用的状况来分配负载
-                - 硬件负载均衡，一般都不管实际系统与应用的状态，而只是从网络层来判断，所以有时候系统处理能力已经不行了，但网络可能还来得及反应(这种情况比较典型，比如应用服务器后面内存已经占用很多，但还没有彻底不行，如果网络传输量不大就未必在网络层能反映出来)
-            * 成本
-                - 硬件成本：中低端硬件负载均衡价格在数十万，高端的上百万，价格非常昂贵。当我们需要组成一个高可用集群时，需要数台机器，成本异常高。
-                    + F5: 15w ~ 55w
-                    + A10: 55w ~ 100w
-                - 人力成本：硬件负载均衡功能比较强大，配置比较灵活，这也导致在维护上，我们需要一些经过专业培训的人员，就增加了人力成本。
-                - 时间成本：当使用的过程中遇到bug或者新需求需要厂商提供新版本的时候，我们需要经过繁琐的流程向厂商上报，然后厂商再发布新版本供我们升级，时间周期非常长，在高速发展的互联网行业，这种周期是无法接受的。
-            * k8s 动态扩容
-                - 一个命令动态扩展10个 nginx 节点，线上运行
-                - 流量洪峰, 响应调度
-                - 一般软件负载均衡支持到 5 万级并发已经很困难了，硬件负载均衡可以支持；
-                    + 但成本
-
