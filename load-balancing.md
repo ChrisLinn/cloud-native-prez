@@ -2,4 +2,7 @@
 <h1 style="font-size:250%;">负载均衡</h1>
 
 ![ld1](/img/ld1.jpg)
+
+<br>
+
 ![ld2](/img/ld2.jpg)
