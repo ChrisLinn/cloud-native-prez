@@ -5,13 +5,9 @@
 <br>
 
 
-![k8s-arch](img/k8s-arch.jpg)
+<img src="/img/k8s-arch.jpg" alt="k8s-arch" width="200%" align="middle";>
 
-<!-- 
-+ account, inventory, shipping
-+ api gateway
-+ service discovery
- -->
+
 
 <br>
 <br>
