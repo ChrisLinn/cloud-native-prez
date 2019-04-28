@@ -4,9 +4,11 @@
 
 ![microservice-concern](/img/microservice-concern.jpg)
 
-<br>
 
 ---
+
+<br>
+
 <p style="font-size:250%;">负载均衡</p>
 <ul style="font-size:150%;">
 <li>DNS负载均衡</li>
